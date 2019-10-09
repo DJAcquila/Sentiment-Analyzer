@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import sys
 import pickle
-from sentiment_analyzer import SentAnalyzer
+from sentiment import SentAnalyzer
 
 import os
 
