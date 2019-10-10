@@ -22,6 +22,7 @@ def main():
 
 
 def SetPersistentClassifier():
+
     try:
         with open('SentAnalyzer.classifyer', 'rb') as file:
             a = pickle.load(file)

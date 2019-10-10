@@ -124,7 +124,7 @@ class SentAnalyzer:
         n_total = n_positive + n_negative
 
         # Calculate the final score por each word
-        final_score = self.scoreCalculation(frequency, cond_frequency, n_positive, n_positive, n_total)
+        final_score = self.scoreCalculation(frequency, cond_frequency, n_positive, n_negative, n_total)
 
         scoreSorted_words = []
         for word, _ in sorted(final_score.items(), key = itemgetter(1), reverse=True):
