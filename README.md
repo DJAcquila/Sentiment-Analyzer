@@ -42,7 +42,7 @@ Install the requirements inside the virtual enviroment
 ```bash
   $ pip3 install -r requirements.txt
 ```
-Test if the requirements are satisfied ```python3``` on terminal and insert 
+Now we have to test if the requirements are satisfied, so type ```python3``` on terminal and once it is running, insert the following
 ```python
 import nltk
 import speech_recognition as sr 
