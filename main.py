@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import sys
 import pickle
-from SentAnalyzer.sentiment import SentAnalyzer
+from Modules.SentAnalyzer.sentiment import SentAnalyzer
 import speech_recognition as sr 
 
 import os
