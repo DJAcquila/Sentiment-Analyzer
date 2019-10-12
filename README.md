@@ -3,7 +3,12 @@ A Sentiment Analyzer for texts using the [Naive-Bayes Classifier](https://en.wik
 ## Dependencies
 - ```Python 3.6.8```
 - The Natural Language Processing library ```NLTK 3.4``` 
+- Speech Recognition library ```SpeechRecognition 3.8.1```
+- To get the microphone ```PyAudio 0.2.11```
+
 ## Instalation Guide
+To succeed with code execution, follow these steps:
+
 Install python3:
 ```bash 
   $ sudo apt-get update
@@ -19,22 +24,36 @@ Install pip:
 ```bash
   $ sudo apt-get install python3-pip
 ```
-Install NLTK: 
-```bash 
-  $ pip install --user -U nltk 
-```
-Install numpy:
-```bash 
-  $ pip install --user -U numpy 
-```
-For the instalation testing run ```python3``` on terminal and insert ```import nltk```
 
-To download the needed data, type the following on terminal:
+Optionally install numpy
+```bash 
+  $ pip3 install --user -U numpy 
+```
+Install the virtual enviroment library
+```bash
+  $ pip3 install virtualenv
+```
+Create and start the virtual enviroment
+```bash
+  $ python3 -m venv env
+  $ source env/bin/activate
+```
+Install the requirements inside the virtual enviroment
+```bash
+  $ pip3 install -r requirements.txt
+```
+Test if the requirements are satisfied ```python3``` on terminal and insert 
+```python
+import nltk
+import speech_recognition as sr 
+```
+
+Download the needed data, type the following on terminal:
 ```bash 
  $ python -m nltk.downloader movie_reviews punkt
 ```
 ## Running the code
-To run the script you can type ```python3 main.py``` on terminal and follow the instructions during the execution.
+To run the script you can type ```python3 main.py``` on terminal and follow the instructions during the execution. The experience will be better with a microphone pluged.
 
 ## License
 MIT License
