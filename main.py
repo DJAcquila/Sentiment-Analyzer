@@ -2,27 +2,37 @@
 import sys
 import pickle
 from SentAnalyzer.sentiment import SentAnalyzer
+import speech_recognition as sr 
 
 import os
 
 def main():
     a = SetPersistentClassifier()
     print("Welcome to SentAnalyzer\nDescribe your feelings to me, and I will tell you if it's bad or good")
+    r = sr.Recognizer()
+    with sr.Microphone() as source:
+        try:
+            while True :
+                audio = r.listen(source)
+                try:
+                    sentence = r.recognize_google(audio)
+                    print('You said: {}'.format(sentence))
+                    if sentence.strip().lower() in ['exit', 'quit']:
+                        break
 
-    while True:
-        sentence = sys.stdin.readline()
-        if sentence.strip().lower() in ['exit', 'quit']:
-            break
-
-        sentiment = a.analyze(sentence)
-        if sentiment == 'pos':
-            print("\tThis is good")
-        elif sentiment == 'neg':
-            print ("\tThis is bad")
+                    sentiment = a.analyze(sentence)
+                    if sentiment == 'pos':
+                        print("\tThis is good")
+                    elif sentiment == 'neg':
+                        print ("\tThis is bad")
+                 
+                except Exception as e:
+                    pass
+        except KeyboardInterrupt:
+            pass       
 
 
 def SetPersistentClassifier():
-
     try:
         with open('SentAnalyzer.classifyer', 'rb') as file:
             a = pickle.load(file)
