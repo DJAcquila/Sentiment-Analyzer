@@ -94,7 +94,7 @@ class SentAnalyzer:
             score = BigramAssocMeasures.chi_sq(positive_frequency, (_freq, n_positive), n_total) # Get the score of positive founded
             final_score[word] += score # Sum the final score for that word
             negative_frequency = cond_frequency[NEGATIVE][word]
-            score = BigramAssocMeasures.chi_sq(negative_frequency, (_freq, n_positive), n_total)
+            score = BigramAssocMeasures.chi_sq(negative_frequency, (_freq, n_negative), n_total)
             final_score[word] += score
 
         return final_score
